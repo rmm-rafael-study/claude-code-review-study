@@ -7,7 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies - use a single directory entry, never list individual files
+# Dependencies
+# GOOD PRACTICE: Always ignore node_modules/ as a directory — never list individual files inside it.
+# Listing individual paths is fragile: new packages won't be ignored automatically.
 node_modules/
 
 # Build output
