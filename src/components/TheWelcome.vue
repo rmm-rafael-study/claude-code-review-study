@@ -6,21 +6,26 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
+// TODO: If adding a new WelcomeItem with a unique icon, import it here.
+// Example: import NewFeatureIcon from './icons/IconNewFeature.vue'
+
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
+  <!-- Documentation item: links to the official Vue.js docs -->
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
     </template>
     <template #heading>Documentation</template>
 
-    Vue’s
+    Vue's
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
   </WelcomeItem>
 
+  <!-- Tooling item: highlights Vite, VSCode, Vitest, Cypress, Playwright -->
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -48,6 +53,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     >.
   </WelcomeItem>
 
+  <!-- Ecosystem item: showcases Pinia, Vue Router, Vue Test Utils, Vue Dev Tools -->
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
@@ -64,6 +70,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     a visit.
   </WelcomeItem>
 
+  <!-- Community item: links to Vue Land Discord, StackOverflow, and social accounts -->
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
@@ -82,6 +89,7 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     X account for latest news in the Vue world.
   </WelcomeItem>
 
+  <!-- Support item: encourages users to sponsor the Vue.js project -->
   <WelcomeItem>
     <template #icon>
       <SupportIcon />
@@ -93,12 +101,26 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem>
 
+  <!--
+    TODO: New item added by this PR — needs the following fixes before merging:
+
+    1. HEADING: Replace "Test" with a meaningful title that describes the item's purpose.
+    2. BODY: Replace the "Test" body text with a real description or relevant links.
+    3. ICON: DocumentationIcon is already used above (Documentation item).
+               Create a new icon at src/components/icons/IconNewFeature.vue,
+               import it in the <script setup> block, and replace DocumentationIcon here.
+    4. PR DESCRIPTION: Add a description to this PR explaining the purpose of this new item.
+  -->
   <WelcomeItem>
     <template #icon>
+      <!-- FIXME: Duplicate icon — DocumentationIcon is already used in the first item.
+           Replace with a unique icon component, e.g. <NewFeatureIcon /> -->
       <DocumentationIcon />
     </template>
+    <!-- FIXME: Replace "Test" with a real heading -->
     <template #heading>Test</template>
 
+    <!-- FIXME: Replace this placeholder text with a meaningful description -->
     Test
   </WelcomeItem>
 </template>
