@@ -51,3 +51,11 @@ npm run build
 ```sh
 npm run lint
 ```
+
+# Install Claude Code
+
+Install to Claude code into project
+
+```sh
+npm install -g @anthropic-ai/claude-code
+``` 
