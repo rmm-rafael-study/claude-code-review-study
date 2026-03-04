@@ -6,35 +6,20 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
-// SUGGESTION: Create a new icon file at src/components/icons/IconNewFeature.vue
-// with an SVG and import it here to avoid reusing DocumentationIcon.
-// Example:
-//   import NewFeatureIcon from './icons/IconNewFeature.vue'
-//
-// Minimal icon component template:
-// <template>
-//   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-//     <!-- paste SVG path(s) here -->
-//   </svg>
-// </template>
-
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
-  <!-- Documentation item: links to the official Vue.js docs -->
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
     </template>
     <template #heading>Documentation</template>
 
-    Vue's
     <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
     provides you with all information you need to get started.
   </WelcomeItem>
 
-  <!-- Tooling item: highlights Vite, VSCode, Vitest, Cypress, Playwright -->
   <WelcomeItem>
     <template #icon>
       <ToolingIcon />
@@ -62,7 +47,6 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     >.
   </WelcomeItem>
 
-  <!-- Ecosystem item: showcases Pinia, Vue Router, Vue Test Utils, Vue Dev Tools -->
   <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
@@ -79,7 +63,6 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     a visit.
   </WelcomeItem>
 
-  <!-- Community item: links to Vue Land Discord, StackOverflow, and social accounts -->
   <WelcomeItem>
     <template #icon>
       <CommunityIcon />
@@ -98,7 +81,6 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     X account for latest news in the Vue world.
   </WelcomeItem>
 
-  <!-- Support item: encourages users to sponsor the Vue.js project -->
   <WelcomeItem>
     <template #icon>
       <SupportIcon />
@@ -110,56 +92,4 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem>
 
-  <!--
-    ============================================================
-    REVIEW: New WelcomeItem — requires changes before merging
-    ============================================================
-
-    ISSUE 1 — DUPLICATE ICON (src/components/TheWelcome.vue:118)
-    DocumentationIcon is already used by the first WelcomeItem (line 19).
-    Each item should have its own distinct icon.
-
-    Fix: Create src/components/icons/IconNewFeature.vue, import it at the top
-    of <script setup>, then replace <DocumentationIcon /> below with <NewFeatureIcon />.
-
-    ISSUE 2 — PLACEHOLDER HEADING (line 122)
-    The heading "Test" is not meaningful.
-    Replace with a descriptive title, e.g. "Getting Started" or "Contributing".
-
-    ISSUE 3 — PLACEHOLDER BODY (line 125)
-    The body text "Test" is not meaningful.
-    Replace with a real description and, ideally, a relevant link. Example:
-
-      Learn how to contribute to this project by reading the
-      <a href="https://github.com/your-org/your-repo/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing Guide</a>.
-
-    ISSUE 4 — NO PR DESCRIPTION
-    This PR has no description. Add one explaining what this new item represents.
-
-    SUGGESTED FINAL RESULT:
-    ──────────────────────────────────────────────────────────────
-    <WelcomeItem>
-      <template #icon>
-        <NewFeatureIcon />
-      </template>
-      <template #heading>Your Feature Name</template>
-
-      A clear description of what this item is about.
-      <a href="https://example.com" target="_blank" rel="noopener">Learn more</a>.
-    </WelcomeItem>
-    ──────────────────────────────────────────────────────────────
-  -->
-  <WelcomeItem>
-    <template #icon>
-      <!-- FIXME (Issue 1): DocumentationIcon is already used in the first WelcomeItem (line 19).
-           Create a new icon component at src/components/icons/IconNewFeature.vue,
-           import it above, and replace this with <NewFeatureIcon />. -->
-      <DocumentationIcon />
-    </template>
-    <!-- FIXME (Issue 2): Replace "Test" with a meaningful heading, e.g. "Getting Started" -->
-    <template #heading>Test</template>
-
-    <!-- FIXME (Issue 3): Replace this placeholder with a real description and relevant links -->
-    Test
-  </WelcomeItem>
 </template>

@@ -7,23 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies
-# GOOD PRACTICE: Always ignore node_modules/ as a directory — never list individual files inside it.
-# Listing individual paths is fragile: new packages won't be ignored automatically.
 node_modules/
-
-# Build output
+.DS_Store
 dist/
 dist-ssr/
-
-# Coverage reports
 coverage/
-
-# Local environment files
 *.local
-.DS_Store
 
-# Cypress test artifacts
 /cypress/videos/
 /cypress/screenshots/
 
