@@ -6,8 +6,17 @@ import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
 
-// TODO: If adding a new WelcomeItem with a unique icon, import it here.
-// Example: import NewFeatureIcon from './icons/IconNewFeature.vue'
+// SUGGESTION: Create a new icon file at src/components/icons/IconNewFeature.vue
+// with an SVG and import it here to avoid reusing DocumentationIcon.
+// Example:
+//   import NewFeatureIcon from './icons/IconNewFeature.vue'
+//
+// Minimal icon component template:
+// <template>
+//   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+//     <!-- paste SVG path(s) here -->
+//   </svg>
+// </template>
 
 const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
@@ -102,25 +111,55 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
   </WelcomeItem>
 
   <!--
-    TODO: New item added by this PR — needs the following fixes before merging:
+    ============================================================
+    REVIEW: New WelcomeItem — requires changes before merging
+    ============================================================
 
-    1. HEADING: Replace "Test" with a meaningful title that describes the item's purpose.
-    2. BODY: Replace the "Test" body text with a real description or relevant links.
-    3. ICON: DocumentationIcon is already used above (Documentation item).
-               Create a new icon at src/components/icons/IconNewFeature.vue,
-               import it in the <script setup> block, and replace DocumentationIcon here.
-    4. PR DESCRIPTION: Add a description to this PR explaining the purpose of this new item.
+    ISSUE 1 — DUPLICATE ICON (src/components/TheWelcome.vue:118)
+    DocumentationIcon is already used by the first WelcomeItem (line 19).
+    Each item should have its own distinct icon.
+
+    Fix: Create src/components/icons/IconNewFeature.vue, import it at the top
+    of <script setup>, then replace <DocumentationIcon /> below with <NewFeatureIcon />.
+
+    ISSUE 2 — PLACEHOLDER HEADING (line 122)
+    The heading "Test" is not meaningful.
+    Replace with a descriptive title, e.g. "Getting Started" or "Contributing".
+
+    ISSUE 3 — PLACEHOLDER BODY (line 125)
+    The body text "Test" is not meaningful.
+    Replace with a real description and, ideally, a relevant link. Example:
+
+      Learn how to contribute to this project by reading the
+      <a href="https://github.com/your-org/your-repo/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing Guide</a>.
+
+    ISSUE 4 — NO PR DESCRIPTION
+    This PR has no description. Add one explaining what this new item represents.
+
+    SUGGESTED FINAL RESULT:
+    ──────────────────────────────────────────────────────────────
+    <WelcomeItem>
+      <template #icon>
+        <NewFeatureIcon />
+      </template>
+      <template #heading>Your Feature Name</template>
+
+      A clear description of what this item is about.
+      <a href="https://example.com" target="_blank" rel="noopener">Learn more</a>.
+    </WelcomeItem>
+    ──────────────────────────────────────────────────────────────
   -->
   <WelcomeItem>
     <template #icon>
-      <!-- FIXME: Duplicate icon — DocumentationIcon is already used in the first item.
-           Replace with a unique icon component, e.g. <NewFeatureIcon /> -->
+      <!-- FIXME (Issue 1): DocumentationIcon is already used in the first WelcomeItem (line 19).
+           Create a new icon component at src/components/icons/IconNewFeature.vue,
+           import it above, and replace this with <NewFeatureIcon />. -->
       <DocumentationIcon />
     </template>
-    <!-- FIXME: Replace "Test" with a real heading -->
+    <!-- FIXME (Issue 2): Replace "Test" with a meaningful heading, e.g. "Getting Started" -->
     <template #heading>Test</template>
 
-    <!-- FIXME: Replace this placeholder text with a meaningful description -->
+    <!-- FIXME (Issue 3): Replace this placeholder with a real description and relevant links -->
     Test
   </WelcomeItem>
   <div class="item">
