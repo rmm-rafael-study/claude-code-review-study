@@ -6687,3 +6687,12 @@ node_modules/yocto-queue/index.js
 node_modules/yocto-queue/license
 node_modules/yocto-queue/package.json
 node_modules/yocto-queue/readme.md
+node_modules/@oxlint/binding-linux-x64-gnu/oxlint.linux-x64-gnu.node
+node_modules/@oxlint/binding-linux-x64-gnu/package.json
+node_modules/@oxlint/binding-linux-x64-gnu/README.md
+node_modules/@oxlint/binding-linux-x64-musl/oxlint.linux-x64-musl.node
+node_modules/@oxlint/binding-linux-x64-musl/package.json
+node_modules/@oxlint/binding-linux-x64-musl/README.md
+node_modules/@rollup/rollup-linux-x64-musl/package.json
+node_modules/@rollup/rollup-linux-x64-musl/README.md
+node_modules/@rollup/rollup-linux-x64-musl/rollup.linux-x64-musl.node
